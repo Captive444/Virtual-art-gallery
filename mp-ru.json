@@ -1,0 +1,227 @@
+
+
+[
+    {
+        "imageBig": "img/mp/big/11844.jpg",
+        "imageSmall": "img/mp/small/11844.webp",
+        "caption": "П. Пикарт",
+        "id": "11844",
+        "name": "Апофеоз воинской славы Петра I (Петр I в родословии)",
+        "description": "",
+        "details": [
+            "1717",
+            "Гравюра"
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/21775.jpg",
+        "imageSmall": "img/mp/small/21775.webp",
+        "caption": "Х.-Д. Раух (?)",
+        "id": "21775",
+        "name": "И.И. Барятинский",
+        "description": "Бюст.",
+        "details": [
+            "Дар Жаголко Р.А.",
+            "Мрамор. Конец 1830-ых."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/22057.jpg",
+        "imageSmall": "img/mp/small/22057.webp",
+        "caption": "Неизвестный художник",
+        "id": "22057",
+        "name": "Портрет императора Петра I",
+        "description": "",
+        "details": [
+            "Холст, масло. Конец XVIII - начало XIX века."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/794.jpg",
+        "imageSmall": "img/mp/small/794.webp",
+        "caption": "Симоно по живописному оригиналу П.Д. Мартена младшего",
+        "id": "794",
+        "name": "Полтавская битва",
+        "description": "",
+        "details": [
+            "Гравюра, акварель. Вторая половина 1720-х."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/3045.jpg",
+        "imageSmall": "img/mp/small/3045.webp",
+        "caption": "Н. де Лармессен по живописному оригиналу П.Д. Мартена младшего",
+        "id": "3045",
+        "name": "Сражение при деревне Лесной",
+        "description": "",
+        "details": [
+            "Гравюра, акварель",
+            "1722 г."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/2457.jpg",
+        "imageSmall": "img/mp/small/2457.webp",
+        "caption": "Мастерская А. Рослина",
+        "id": "2457",
+        "name": "Князь А. Б. Куракин",
+        "description": "",
+        "details": [
+            "Холст, масло. Конец XVIII века."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/5739.jpg",
+        "imageSmall": "img/mp/small/5739.webp",
+        "caption": "Неизвестный художник с оригинала Л. Лампи Старшего",
+        "id": "5739",
+        "name": "Граф А. И. Мусин-Пушкин",
+        "description": "",
+        "details": [
+            "Холст, масло. Начало XIX века."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/5848.jpg",
+        "imageSmall": "img/mp/small/5848.webp",
+        "caption": "Неизвестный художник с оригинала Д. Г. Левицкого",
+        "id": "5848",
+        "name": "Н. И. Новиков",
+        "description": "",
+        "details": [
+            "Холст, масло. Начало XIX века."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/20063.jpg",
+        "imageSmall": "img/mp/small/20063.webp",
+        "caption": "Неизвестный художник с оригинала А. Рослина",
+        "id": "20063",
+        "name": "Императрица Екатерина II",
+        "description": "",
+        "details": [
+            "Вторая половина XVIII века."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/2628.jpg",
+        "imageSmall": "img/mp/small/2628.webp",
+        "caption": "Шубин Ф. И.",
+        "id": "2628",
+        "name": "П.А. Румянцев-Задунайский",
+        "description": "",
+        "details": [
+            "Мрамор белый. 1777 г."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/2603.jpg",
+        "imageSmall": "img/mp/small/2603.webp",
+        "caption": "С. Тончи",
+        "id": "2603",
+        "name": "Княгиня Е. Р. Дашкова",
+        "description": "",
+        "details": [
+            "Холст, масло. После 1796 г. В раме. Россия, 19в. Дерево, лепнина, позолота, бронзовая краска"
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/24628.jpg",
+        "imageSmall": "img/mp/small/24628.webp",
+        "caption": "И.Г. Альбрехт",
+        "id": "24628",
+        "name": "Часы-портик каминные",
+        "description": "",
+        "details": [
+            "Германия, Берлин. Около 1810 г. Белый мрамор, бронза, литье, золочение, эмаль. Размеры: 44,5 х 29,8 х 11,0 см."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/11733.jpg",
+        "imageSmall": "img/mp/small/11733.webp",
+        "caption": "Неизвестный художник",
+        "id": "11733",
+        "name": "Портрет цесаревича Петра Алексеевича",
+        "description": "",
+        "details": [
+            "Московская школа. 1670-е. Дерево, масло, темпера. Размеры: 20,0х18,0 см."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/4566.jpg",
+        "imageSmall": "img/mp/small/4566.webp",
+        "caption": "Неизвестный художник",
+        "id": "4566",
+        "name": "Светлейший князь Г. А. Потемкин-Таврический",
+        "description": "",
+        "details": [
+            "1789",
+            "Гравюра. Начало XIX века"
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/47827.jpg",
+        "imageSmall": "img/mp/small/47827.webp",
+        "caption": "К.Г. Шульц",
+        "id": "47827",
+        "name": "Князь А. М. Белосельский-Белозерский",
+        "description": "",
+        "details": [
+            "Конец XVIII века"
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/47832.jpg",
+        "imageSmall": "img/mp/small/47832.webp",
+        "caption": "Д. Уокер по оригиналу И.Б. Лампи",
+        "id": "47832",
+        "name": "Князь П. А. Зубов",
+        "description": "",
+        "details": [
+            "Гравюра. Конец XVIII века"
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/47873.jpg",
+        "imageSmall": "img/mp/small/47873.webp",
+        "caption": "А.Х. Радиг по оригиналу А. Рослена",
+        "id": "47873",
+        "name": "Граф Н. И. Панин",
+        "description": "",
+        "details": [
+            "Гравюра. 1792 г."
+        ]
+    },
+    {
+        "imageBig": "img/mp/big/478119.jpg",
+        "imageSmall": "img/mp/small/478119.webp",
+        "caption": "Д. Уокер по оригиналу Д.А. Аткинсона",
+        "id": "478119",
+        "name": "Граф А. В. Суворов – Рымницкий",
+        "description": "",
+        "details": []
+    },
+    {
+        "imageBig": "img/mp/big/1760.jpg",
+        "imageSmall": "img/mp/small/1760.webp",
+        "caption": "К. Л. Христинек",
+        "id": "1760",
+        "name": "Великий князь Павел Петрович-ребенок",
+        "description": "",
+        "details": [
+            "1760-е. Холст, масло."
+        ]
+    },
+    {
+    "imageBig": "img/mp/big/564414.jpg",
+    "imageSmall": "img/mp/small/564414.webp",
+    "caption": "Д. Уокер по оригиналу Л.Э. Виже-Лебрен",
+    "id": "564414",
+    "name": "Графиня Е. С. Самойлова с детьми",
+    "description": "",
+    "details": [
+        "1797 года. Гравюра. 1798."
+    ]
+}
+
+]

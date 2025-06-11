@@ -1,0 +1,499 @@
+
+body {
+    overflow-y: auto; 
+    margin: 0; 
+    /* margin-bottom: 20px; */
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('fonts/static/PlayfairDisplay-Regular.ttf') format('truetype'),
+       url('fonts/static/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; /* Жирное начертание */
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; /* Обычное начертание */
+}
+
+p {
+      font-family: 'Playfair Display', serif;
+
+}
+a {
+      font-family: 'Playfair Display', serif;
+
+}
+
+header {
+    width: 100%;
+    height: 12vh;
+    background: linear-gradient(135deg, #8B0000, #000000);
+    background-repeat: repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* кнопка языка в 2 */
+        
+
+nav {
+    margin: auto;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.desktop-hide {
+    display: none;
+}
+
+
+.nav-menu h1 {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: rgb(246, 244, 244);
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.6s;
+}
+/* 
+.nav-menu a:hover {
+    transform: scale(0.95);
+    color: whitesmoke;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+} */
+
+/* .navbar h1 a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+} */
+
+/* .nav-menu h1 a.active {
+    color: whitesmoke;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+} */
+
+/* .nav-menu h1 a.active::after {
+    content: '';
+    display: block;
+    transform: scale(0.95);
+} */
+
+.nav-menu h1 a.active {
+    color: whitesmoke;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: blink 1s linear infinite;
+}
+
+/* @keyframes blink { 
+  50% {
+    opacity: 0; 
+  }
+}
+
+.nav-menu h1 a.active::after {
+    display: none; 
+}
+
+@keyframes blink {
+    50% {
+      color: transparent; 
+      text-shadow: none;
+    }
+  } */
+
+.main-content {
+    overflow-y: auto;
+    /* padding: 20px 0; */
+    padding-bottom: 0px;
+    /* margin-top: 40px; */
+
+}
+
+
+      #panorama-container {
+            width: 100%;
+            /* height: 600px;  */
+            height: auto;
+            margin-top: 12vh;
+            overflow: hidden;
+            /* overflow-y: auto; */
+            position: relative;
+        }
+
+        #panorama-image {
+            /* position: absolute; */
+            width: auto;
+            
+            object-fit: cover;
+            
+            top: 0;
+            left: 0;
+            /* transition: transform 0.3s ease-out; */
+        }
+
+        .tooltip {
+            position: absolute;
+            /* background: rgba(255, 255, 255, 0.8); */
+            background-color: rgb(31 29 29 / 70%);
+            border: 1px solid #ccc;
+            padding: 5px;
+            display: none;
+        }
+
+        .text {
+            /* margin-top: 25px;  */ 
+            width: 100%;
+            /* height: 200px; */
+            height: auto;
+            /* overflow-y: auto; */
+            background: rgba(255, 255, 255, 0.8);
+            
+            padding: 10px;
+            padding-top: 0px;
+            box-sizing: border-box;
+            border-top: 1px solid #ccc;
+        
+        }
+
+        .EtikAll p  {
+            text-indent: 1em;
+            /* font-size: 30px; */
+            text-align: justify; 
+            margin-top: 0;
+            margin-bottom: 0;
+            /* padding: 20px; */
+            margin-left: 30px;
+            margin-right: 30px;
+          
+        }
+        .EtikAll h2  {
+            margin-bottom: 0; 
+        }
+
+                .text::-webkit-scrollbar {
+                    display: none;
+                }
+    
+    	
+    
+    	.overlay-text {
+    	    position: absolute;
+    	    top: 50%;
+    	    left: 50%;
+    	    transform: translate(-50%, -50%);
+    	    color: white;
+    	    font-size: 24px;
+    	    text-align: center;
+    	    z-index: 2;
+    
+    	}
+
+        /* .scroll-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .scroll-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+        } */
+        
+        .scroll-controls button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+    
+        
+  /* мерцание */
+  /* .highlight {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 45%; 
+    pointer-events: none; 
+    animation: blink 1.5s infinite; 
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 0%
+    );
+    mask: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-mask: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    filter: blur(20px); 
+} */
+.highlight {
+    position: absolute;
+    background: rgba(242, 240, 240, 0.5);
+    border-radius: 50%; 
+    pointer-events: none;
+    animation: blink 5s infinite;
+    width: 100px; 
+    height: 100px;
+
+    filter: blur(10px); /* Увеличиваем значение размытия */
+    opacity: 0.8; /* По желанию, чтобы было менее интенсивным */
+  
+  }
+  
+
+  @keyframes blink {
+
+      0%,
+      100% {
+          opacity: 0.8;
+      }
+
+      50% {
+          opacity: 0.1;
+      }
+  }
+
+
+  .content-mp {
+/* margin-top: 13vh; */
+text-align: center;
+font-size: 20px;
+background-color: #f9f9f9;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+/* мерцание заголовка */
+.neonText a {
+    animation: smooth-blink 2s infinite ease-in-out;
+    color: #fff !important; /* На случай, если другие стили перебивают цвет */
+}
+
+@keyframes smooth-blink {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px #fff,
+            0 0 20px rgb(255, 145, 0),
+            0 0 30px rgb(241, 5, 5);
+    }
+    50% {
+        text-shadow: none;
+    }
+}
+
+  /* сворачивание экрана */
+
+  #imageContainer {
+    position: relative; /* Нужен для абсолютного позиционирования кнопки */
+    width: 500px; /* Или другой размер по умолчанию */
+    height: auto;
+  }
+  
+  #myImage {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer; /* Указываем, что по изображению можно кликать */
+    transition: transform 0.3s ease; /* Добавляем плавную анимацию */
+  }
+  
+  #myImage.fullscreen {
+   position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1000 !important;
+  margin: 0 !important;
+  }
+
+  
+  #resetButton {
+      background-color: #f44336; /* Красный цвет */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+  }
+  
+
+
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+  
+    /* padding-left: 2ch; */
+
+}
+
+
+/* витрина */
+.cube-slider * {
+    box-sizing: border-box;
+}    
+.cube-wrapper {
+    position: relative;
+    padding: 20px 0 60px 0;
+    /* margin-top: 14ch; */
+}                
+.cube-slider {
+    position: relative;
+    max-width: 400px;            
+}        
+.cube-slider .swiper-slide {
+    position: relative;
+    user-select: none;
+    aspect-ratio: 1 / 1;
+}
+.cube-slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;    
+    display:block
+}                
+.cube-top {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4), 0 16px 20px rgba(0,0,0,0.3);
+    padding: 6px 10px;
+    color: #000;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;            
+}
+.cube-slider .cube-bottom {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 70px;
+    padding: 10px 20px;
+    /* background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); */
+    color: #fff;
+}
+.cube-slider .cube-bottom p {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.1;
+}
+@media screen and (max-width:767px) {
+    .cube-slider .cube-bottom p {
+        font-size: 14px;
+    }    
+}
+.cube-slider .cube-bottom a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+}
+.cube-slider .cube-bottom a:before,
+.cube-slider .cube-bottom a:after {
+    content: "";
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    opacity: 0;
+    transition: 0.3s;
+    display: inline-block;
+    pointer-events: none;    
+}
+.cube-slider .cube-bottom a:before {
+    border-bottom: 1px solid #bfe2ff;
+    opacity: 1;
+    bottom: -2px;
+}
+.cube-slider .cube-bottom a:hover:after {
+    bottom: -2px;
+    opacity: 1;    
+}
+
+.swiper-slide img {
+    height: 20px;
+}
+
+.cube-slider .swiper-slide {
+    position: relative;
+    user-select: none;
+    aspect-ratio: 1 / 1; /* Соотношение сторон */
+    background-color: #f0f0f0; /* Нейтральный цвет фона */
+}
+
+.cube-slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Сохраняет пропорции изображения */
+    object-position: center; /* Центрирует изображение */
+    display: block;
+}
+
+.cube-slider .swiper-slide p {
+        font-size: 18px;
+        margin-top: 70px; 
+        text-align: center;
+    }  

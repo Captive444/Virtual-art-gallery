@@ -1,0 +1,123 @@
+.main-content {
+    height: calc(100vh - 12vh);
+    overflow-y: auto !important;
+    margin-top: 12vh;
+}
+
+/* #panorama-container {
+    overflow: visible !important;
+    min-height: 100%;
+} */
+
+/* section {
+    margin-top: 12ch;
+} */
+
+.EtikAll {
+    font-size: 24px;
+    padding-bottom: 40px;
+    display: flow-root;
+    clear: both;
+}
+
+.EtikAll figure {
+    float: left; /* По умолчанию влево, можно переопределить для отдельных картинок */
+    margin: 15px;
+}
+
+.EtikAll figure img.fixed-size-image { 
+    width: 200px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.EtikAll figcaption {
+    width: 200px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.EtikAll {
+    font-size: 24px;
+    margin: 0 15px; 
+    text-align: justify;
+    word-break: break-word;
+}
+
+.EtikAll figure.right { /* Класс для картинок справа */
+    float: right;
+}
+
+.EtikAll h2 {
+    text-align: center;
+}
+
+button {
+    margin-right: 20px;
+}
+
+
+/* язык
+ */
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+
+
+/*  */
+
+
+
+#lang-toggle:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* новые кнопка */
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#lang-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    color: azure;
+    position: relative;
+    transition: all 0.2s ease;
+    
+    /* Легкая тень сверху и слева */
+    box-shadow: 
+        1px 1px 1px rgba(255, 255, 255, 0.2),
+        -1px -1px 1px rgba(0, 0, 0, 0.1);
+    
+
+    border-radius: 3px;
+}
+
+#lang-toggle:focus {
+    outline: none;
+}
+
+/* Эффект нажатия */
+#lang-toggle:active {
+    transform: translate(1px, 1px); /* Легкое смещение при нажатии */
+    box-shadow: 
+        0 0 1px rgba(255, 255, 255, 0.1),
+        inset 1px 1px 2px rgba(0, 0, 0, 0.2); /* Тень внутрь при нажатии */
+    
+    /* Можно добавить легкое изменение цвета */
+    background-color: rgba(255, 255, 255, 0.05);
+}

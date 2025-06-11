@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+ 
+   
+    <title>ЗАЛ № 1</title>
+    <style>
+       
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; /* Жирное начертание */
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; /* Обычное начертание */
+}
+        #panorama-container {
+            overflow: hidden;
+            /* Скрываем всё, что выходит за границы */
+            position: relative;
+            /* Для позиционирования дочерних элементов */
+            height: 610px;
+            /* Фиксированная высота */
+        }
+
+        /* Стили для основного и клонированного изображений */
+        #panorama-image,
+        #panorama-image-clone {
+            position: absolute;
+            height: 610px;
+            will-change: transform;
+            top: 0;
+            /* Позиционирование сверху */
+            left: 0;
+            /* Позиционирование слева */
+        }
+
+        .language-selector button {
+        display: flex;
+        justify-content: end;
+        margin-left: 80%;
+        }
+
+ .header {
+    display: flex;
+    justify-content: flex-end; /* Или right */
+    width: 100%; /* Занимает всю ширину */
+} 
+        .header-buttons {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        #lang-toggle {
+            background: none;
+            margin-right: 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+        #lang-toggle:focus {
+            outline: none;
+        }
+
+        .details-button {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header Fixed">
+        <nav class="nav-menu">
+            <h1 class="neonText"><a href="info.html">Зал № 1. «Пролог»<br>
+                    <div style="text-align: center;"><span class="details-button">Подробнее</span></div>
+                </a></h1>
+
+       <div class="header-buttons">
+           <button style="color: azure;" id="lang-toggle">EN</button>
+
+       </div>
+
+
+
+        </nav>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="main-content">
+        <div id="panorama-container">
+            <!-- Основное изображение панорамы -->
+            <img id="panorama-image" src="img/zal1.jpg" height="610px" title="zal1" alt="zal1" usemap="#Map2" />
+            <!-- Клонированное изображение для бесконечной прокрутки -->
+            <img id="panorama-image-clone" src="img/zal1.jpg" height="610px" title="zal1" alt="zal1" usemap="#Map2" />
+
+            <!-- Карта кликабельных областей -->
+            <map name="Map2">
+                <area class="area-link" shape="rectangle" coords="1934,150,1988,287" href='text.html' data-id="11844">
+                <area class="area-link" shape="rectangle" coords="1912,294,1932,419" href='text.html' data-id="21775">
+                <area class="area-link" shape="rectangle" coords="2298,141,2418,314" href='text.html' data-id="22057">
+                <area class="area-link" shape="rectangle" coords="2474,130,2560,222" href='text.html' data-id="794">
+                <area class="area-link" shape="rectangle" coords="2475,239,2565,325" href='text.html' data-id="3045">
+                <area class="area-link" shape="rectangle" coords="2907,168,3007,279" href='text.html' data-id="2457">
+                <area class="area-link" shape="rectangle" coords="40,143,155,290" href='text.html' data-id="5739">
+                <area class="area-link" shape="rectangle" coords="200,173,266,265" href='text.html' data-id="5848">
+                <area class="area-link" shape="rectangle" coords="907,155,1006,296" href='text.html' data-id="20063">
+                <area class="area-link" shape="rectangle" coords="1060,221,1096,307" href='text.html' data-id="2628">
+                <area class="area-link" shape="rectangle" coords="1409,95,1580,310" href='text.html' data-id="2603">
+                <area class="area-link" shape="rectangle" coords="1474,302,1529,395" href='text.html' data-id="24628">
+                <area class="area-link" shape="rectangle" coords="2808,243,2873,335" href='text.html' data-id="4566">
+                <area class="area-link" shape="rectangle" coords="294,121,343,225" href='text.html' data-id="47827">
+                <area class="area-link" shape="rectangle" coords="299,238,339,306" href='text.html' data-id="47832">
+                <area class="area-link" shape="rectangle" coords="389,246,431,309" href='text.html' data-id="47873">
+                <area class="area-link" shape="rectangle" coords="381,136,436,214" href='text.html' data-id="478119">
+                <area class="area-link" shape="rectangle" coords="2798,109,2885,217" href='text.html' data-id="564414">
+                <area class="area-link" shape="rectangle" coords="2798,109,2885,217" href='text.html' data-id="16388">
+                <area class="area-link" shape="rectangle" coords="705,139,842,332" href='text.html' data-id="1760">
+                <area class="static-link" shape="rectangle" coords="18,377,196,398" href='slider-project/showcase.html'
+                    data-static-link="true">
+                <area class="static-link" shape="rectangle" coords="2817,371,2983,471" href='slider-project/showcase№3.html'
+                    data-static-link="true">
+                <area class="static-link" shape="rectangle" coords="1688,55,1852,371" href='slider-project/Витрина экспонатов.html'
+                    data-static-link="true">
+            </map>
+
+            <!-- Подсказка (тултип) -->
+            <div class="tooltip" id="tooltip"></div>
+        </div>
+    </main>
+
+    <script src="js/lang.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+
+</html>

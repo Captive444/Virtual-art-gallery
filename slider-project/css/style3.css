@@ -1,0 +1,79 @@
+   .header {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .back-link {
+            position: absolute;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .title1 {
+            text-align: center;
+            flex-grow: 1;
+            color: #fff;
+        }
+
+        .lang-toggle {
+            position: absolute;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        .slide-text {
+            display: none;
+        }
+
+        .slide-text.ru {
+            display: block;
+        }
+
+       
+           /* Добавляем стили для модального окна */
+   .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        

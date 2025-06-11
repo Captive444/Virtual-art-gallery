@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0, user-scalable=1">
+    <title>ЗАЛ № 1</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/magnific-popup.min.css">
+    <style>
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        .image-container {
+            margin-top: 10px;
+            position: relative;
+        }
+
+        /* .EtikAll p {
+            text-indent: 1em; 
+         
+            text-align: justify;
+        } */
+
+        img {
+            cursor: zoom-in;
+        }
+
+       
+        .mfp-img {
+            max-height: 90% !important;
+            width: auto !important;
+            height: auto !important;
+            margin: 0 auto !important;
+        }
+
+        .mfp-close {
+            font-size: 40px !important;
+            color: white !important;
+            opacity: 1 !important;
+            right: 20px !important;
+            top: 20px !important;
+        }
+
+        .mfp-title {
+            color: white !important;
+            font-size: 16px !important;
+            padding: 10px !important;
+            text-align: center !important;
+        }
+
+        .mfp-bg {
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        img.mfp-img
+        {
+            max-width: 50%;
+        }
+
+ 
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="exit">← Вернуться к панораме</a>
+        <div class="header-buttons">
+            <button style="color: azure;" id="lang-toggle">EN</button>
+            <button class="btn"><img src="img/icons/icons8-увеличить-шрифт-50.png"></button>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="info-section">
+            <div class="EtikAll">
+                <h2>Зал № 1. «Пролог»</h2>
+                <p style="text-align: right;">
+                    <i>Гордиться славою своих предков не только можно, но и должно... А.С. Пушкин</i>
+                </p>
+                <br>
+                <figure>
+                    <a href="img/mp/big/11733.jpg" class="popup-img" title="Цесаревич Петр Алексеевич">
+                        <img class="fixed-size-image" src="img/mp/small/11733.webp" alt="Петр 1">
+                    </a>
+                    <figcaption>
+                        <span class="translation" style="display: none;">Цесаревич Петр Алексеевич (1672–1725)
+                            Неизвестный художник Московской школы. 1670-е. Дерево, масло, темпера</span>
+                        <br>
+                        <span class="translation" style="display: none;">Tsarevich Peter Alexeyevich (1672–1725) Unknown
+                            artist of the Moscow school. 1670s. Wood, oil, tempera</span>
+                    </figcaption>
+                </figure>
+                <p>Судьба пушкинского рода, основателем которого в XIII веке был воин Радша, так же как и судьба предков
+                    Пушкина по линии матери, урожденной Ганнибал, неотделима от истории России.</p>
+                <!-- Добавлять здесь -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/jquery-3.6.0.slim.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lang.js"></script>
+    <script>
+
+
+        // Инициализация Magnific Popup
+        $(document).ready(function () {
+            $('.popup-img').magnificPopup({
+                type: 'image',
+                closeOnContentClick: false,
+                closeBtnInside: false,
+                mainClass: 'mfp-with-zoom mfp-img-mobile',
+                image: {
+                    verticalFit: true,
+                    titleSrc: function (item) {
+                        return item.el.attr('title');
+                    }
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300,
+                    easing: 'ease-in-out'
+                },
+                callbacks: {
+                    open: function () {
+                        // Разрешаем скролл
+                        $('html').css('overflow', 'auto');
+                    },
+                    close: function () {
+                        // Восстанавливаем стандартное поведение
+                        $('html').css('overflow', '');
+                    }
+                }
+            });
+        });
+
+        const exitLink = document.querySelector('.exit');
+        const btn = document.querySelector('.btn');
+        const etikAll = document.querySelector('.EtikAll');
+        const etikAll2 = document.querySelector('.EtikAll p');
+        let fontSize = 24;
+
+        btn.addEventListener('click', () => {
+            fontSize++;
+            if (fontSize > 34) {
+                fontSize = 24;
+            }
+            etikAll.style.fontSize = fontSize + 'px';
+            etikAll2.style.fontSize = fontSize + 'px';
+        });
+
+        function redirectToIndex() {
+            window.location.href = 'index.html';
+        }
+        setTimeout(redirectToIndex, 60000);
+
+    </script>
+</body>
+
+</html>

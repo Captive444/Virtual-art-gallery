@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0, user-scalable=1" />
+    <title>Текст зала № 1</title>
+    <!-- <link type="text/css" rel="stylesheet" href="../../../../css/styler.css" /> -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/style2.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="../../../../font/font-awesome/css/font-awesome.css" /> -->
+    <link rel="stylesheet" href="css/magnific-popup.min.css">
+    <script src="js/jquery-3.6.0.slim.min.js"></script> 
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    
+    <style>
+        
+.header a {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+.header a:hover {
+            text-decoration: underline;
+        }
+
+.image-container {
+            margin-top: 10px;
+            position: relative; 
+}
+
+.EtikAll p {
+    text-indent: 0em;
+    text-align: justify;
+}
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        
+        <a href="index.html" class="exit">← Вернуться к панораме</a>
+    <!-- <div class="header-buttons">
+        <button style="color: azure;" id="lang-toggle">EN</button>
+    
+    </div> -->
+    </header>
+
+<main class="main-content">
+    <div id="page"></div>
+</main>
+
+    <script src="js/main.js"></script>
+    <!-- <script src="js/lang.js"></script> -->
+     <script>
+
+
+        // Переводы
+
+
+        const commonTranslations = {
+            en: { returnToPanorama: "← Return" },
+            ru: { returnToPanorama: "← Вернуться к панораме" }
+        };
+
+
+
+        // Инициализация Magnific Popup
+        function initMagnificPopup() {
+            $('.popup-img').magnificPopup({
+                type: 'image',
+                closeOnContentClick: true,
+                closeBtnInside: false,
+                mainClass: 'mfp-with-zoom',
+                image: {
+                    verticalFit: true,
+                    titleSrc: function(item) {
+                        return item.el.attr('data-caption') || '';
+                    }
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300
+                }
+            });
+        }
+
+// Управление языком
+function initLanguage() {
+            const langToggle = document.getElementById('lang-toggle');
+            const currentLang = localStorage.getItem('language') || 'ru';
+            document.querySelector('.exit').textContent = commonTranslations[currentLang].returnToPanorama; // Установите текст кнопки возврата
+            langToggle.textContent = currentLang === 'ru' ? 'EN' : 'RU'; // Установите текст переключателя языка
+            
+            langToggle.addEventListener('click', () => {
+                const newLang = currentLang === 'ru' ? 'en' : 'ru';
+                localStorage.setItem('language', newLang);
+                document.querySelector('.exit').textContent = commonTranslations[newLang].returnToPanorama; // Обновите текст кнопки возврата
+                window.location.reload(); // Перезагружаем страницу для применения изменений
+            }); 
+        }
+
+
+        // Управление масштабированием изображения
+        function initImageZoom() {
+            const image = document.getElementById('myImage');
+            const resetButton = document.getElementById('resetButton');
+            
+            if (image) {
+                image.addEventListener('dblclick', () => {
+                    image.classList.toggle('fullscreen');
+                    resetButton.style.display = image.classList.contains('fullscreen') ? 'block' : 'none';
+                });
+            }
+            
+            if (resetButton) {
+                resetButton.addEventListener('click', () => {
+                    const image = document.getElementById('myImage');
+                    if (image) {
+                        image.classList.remove('fullscreen');
+                        resetButton.style.display = 'none';
+                    }
+                });
+                resetButton.style.display = 'none';
+            }
+        }
+
+        // Основная функция инициализации
+        document.addEventListener('DOMContentLoaded', async () => {
+            initLanguage();
+            
+            try {
+                const pageDiv = document.getElementById('page'); 
+                const data = await loadData();
+                const urlParams = new URLSearchParams(window.location.search);
+                const exhibitId = urlParams.get('id');
+
+                if (exhibitId) {
+                    const exhibit = data.find(item => item.id === exhibitId);
+                    if (exhibit) {
+                        pageDiv.innerHTML = createExhibitHTML(exhibit);
+                        initMagnificPopup();
+                        initImageZoom();
+                    } else {
+                        pageDiv.innerHTML = "<p>Экспонат не найден.</p>";
+                    }
+                } else {
+                    pageDiv.innerHTML = "<p>ID экспоната не указан.</p>";
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки данных:', error);
+                document.getElementById('page').innerHTML = "<p>Ошибка загрузки данных экспоната.</p>";
+            }
+
+            // Таймер перенаправления
+   
+        });
+
+                 setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 40000);
+     </script>
+
+</body>
+</html>

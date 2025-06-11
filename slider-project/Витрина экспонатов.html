@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>showcase</title>
+
+    <link type="text/css" rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <!-- <link type="text/css" rel="stylesheet" href="../css/style2.css"/> -->
+    <link type="text/css" rel="stylesheet" href="css/style3.css">
+            <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .main-display {
+            display: flex;
+            width: 100%;
+            height: 60vh;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .image-container {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            overflow: hidden;
+            padding: 2ch;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .description-container {
+            width: 30%;
+            height: 100%;
+            padding: 20px;
+            overflow-y: auto;
+            border-left: 1px solid #ccc;
+        }
+        
+        .thumbnails-container {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+            background-color: #eee;
+        }
+        
+        .thumbnails {
+            display: flex;
+            height: 100%;
+            padding: 10px;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .thumbnail {
+            height: 100%;
+            min-width: 120px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .thumbnail:hover {
+            border-color: #333;
+        }
+        
+        .thumbnail.active {
+            border-color: #0066cc;
+        }
+        
+        .thumbnail img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .scroll-btn.left {
+            left: 10px;
+        }
+        
+        .scroll-btn.right {
+            right: 10px;
+        }
+        
+        .scroll-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header class="header Fixed">
+        <a href="../index.html" class="back-link exit">← Вернуться к панораме</a>
+        <div class="title1">
+            <h1 id="showcase-title">Витрина № 2</h1>
+        </div>
+        <button id="lang-toggle" class="lang-toggle">EN</button>
+    </header>
+
+ <div class="main-display">
+        <div class="image-container">
+            <img id="main-image" src="" alt="Выберите экспонат">
+        </div>
+        <div class="description-container" id="description">
+            <p>Выберите экспонат из коллекции ниже, чтобы увидеть его изображение и описание.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia.
+            </p>
+        </div>
+    </div>
+    
+    <div class="thumbnails-container">
+        <button class="scroll-btn left">&lt;</button>
+        <div class="thumbnails" id="thumbnails">
+            <!-- Миниатюры будут добавлены через JavaScript -->
+        </div>
+        <button class="scroll-btn right">&gt;</button>
+    </div>
+    
+    <script>
+        // Данные экспонатов
+        const exhibits = [
+            {
+                id: 1,
+                title: "Тест № 1",
+                image: "../img/mp/small/794.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia.."
+            },
+            {
+                id: 2,
+                title: "Тест № 2",
+                image: "../img/mp/small/2457.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia."
+            },
+            {
+                id: 2,
+                title: "Тест № 3",
+                image: "../img/mp/small/2889.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia."
+            },
+            {
+                id: 2,
+                title: "Тест № 4",
+                image: "../img/mp/small/7874.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia."
+            },
+            {
+                id: 2,
+                title: "Тест № 5",
+                image: "../img/mp/small/16389.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia."
+            },
+            {
+                id: 2,
+                title: "Тест № 6",
+                image: "../img/mp/small/20063.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia."
+            },
+            {
+                id: 2,
+                title: "Тест № 7",
+                image: "../img/mp/small/21775.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia."
+            },
+            {
+                id: 2,
+                title: "Тест № 8",
+                image: "../img/mp/small/5848.webp",
+                description: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, fuga quas similique expedita molestiae nostrum omnis! Unde exercitationem ex impedit alias quidem, nulla placeat, quibusdam totam ut accusantium saepe magnam doloremque quis libero at sapiente. Voluptate, a, dolorem excepturi voluptatum aspernatur ea cum dolores nihil assumenda distinctio eius quaerat sed illum quo? Magni, laudantium quia."
+            },
+            {
+                id: 2,
+                title: "Тест № 1",
+                image: "../img/mp/small/2457.webp",
+                description: "Рыцарский меч XIV века. Принадлежал, предположительно, рыцарю ордена Тамплиеров. Отличная сохранность для своего возраста."
+            },
+            {
+                id: 2,
+                title: "Тест № 1",
+                image: "../img/mp/small/2457.webp",
+                description: "Рыцарский меч XIV века. Принадлежал, предположительно, рыцарю ордена Тамплиеров. Отличная сохранность для своего возраста."
+            },
+            {
+                id: 2,
+                title: "Средневековый меч",
+                image: "../img/mp/small/2457.webp",
+                description: "Рыцарский меч XIV века. Принадлежал, предположительно, рыцарю ордена Тамплиеров. Отличная сохранность для своего возраста."
+            },
+            {
+                id: 3,
+                title: "Ренессансная картина",
+                image: "https://example.com/painting.jpg",
+                description: "Картина неизвестного художника эпохи Возрождения. Изображает библейский сюжет. Приобретена музеем в 1897 году на аукционе в Венеции."
+            },
+            {
+                id: 4,
+                title: "Археологическая находка",
+                image: "https://example.com/artifact.jpg",
+                description: "Каменный артефакт эпохи неолита. Использовался, вероятно, в ритуальных целях. Найден при раскопках в 2010 году."
+            },
+            {
+                id: 5,
+                title: "Старинные часы",
+                image: "https://example.com/clock.jpg",
+                description: "Карманные часы XVIII века работы французского мастера. Сохранились в рабочем состоянии. Принадлежали графской семье."
+            },
+            {
+                id: 6,
+                title: "Римская монета",
+                image: "https://example.com/coin.jpg",
+                description: "Серебряный денарий времен императора Августа. Отчеканена в 12 году до н.э. Найдена в составе клада в 2005 году."
+            },
+            {
+                id: 7,
+                title: "Египетский амулет",
+                image: "https://example.com/amulet.jpg",
+                description: "Амулет в форме скарабея. Датируется периодом Нового царства (1550—1069 до н. э.). Сделан из фаянса."
+            }
+        ];
+        
+        // Элементы DOM
+        const mainImage = document.getElementById('main-image');
+        const description = document.getElementById('description');
+        const thumbnailsContainer = document.getElementById('thumbnails');
+        const scrollLeftBtn = document.querySelector('.scroll-btn.left');
+        const scrollRightBtn = document.querySelector('.scroll-btn.right');
+        
+        // Создание миниатюр
+        exhibits.forEach((exhibit, index) => {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'thumbnail';
+            thumbnail.dataset.id = exhibit.id;
+            
+            const img = document.createElement('img');
+            img.src = exhibit.image;
+            img.alt = exhibit.title;
+            
+            thumbnail.appendChild(img);
+            thumbnailsContainer.appendChild(thumbnail);
+            
+            // Обработчик клика по миниатюре
+            thumbnail.addEventListener('click', () => {
+                displayExhibit(exhibit);
+                highlightThumbnail(thumbnail);
+            });
+            
+            // Первый экспонат отображается по умолчанию
+            if (index === 0) {
+                displayExhibit(exhibit);
+                highlightThumbnail(thumbnail);
+            }
+        });
+        
+        // Функция отображения выбранного экспоната
+        function displayExhibit(exhibit) {
+            mainImage.src = exhibit.image;
+            mainImage.alt = exhibit.title;
+            
+            description.innerHTML = `
+                <h2>${exhibit.title}</h2>
+                <p>${exhibit.description}</p>
+            `;
+        }
+        
+        // Функция выделения активной миниатюры
+        function highlightThumbnail(selectedThumbnail) {
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            selectedThumbnail.classList.add('active');
+        }
+        
+        // Прокрутка миниатюр
+        let scrollPosition = 0;
+        const scrollStep = 200;
+        
+        scrollLeftBtn.addEventListener('click', () => {
+            scrollPosition = Math.min(scrollPosition + scrollStep, 0);
+            thumbnailsContainer.style.transform = `translateX(${scrollPosition}px)`;
+        });
+        
+        scrollRightBtn.addEventListener('click', () => {
+            const maxScroll = -(thumbnailsContainer.scrollWidth - thumbnailsContainer.parentElement.offsetWidth);
+            scrollPosition = Math.max(scrollPosition - scrollStep, maxScroll);
+            thumbnailsContainer.style.transform = `translateX(${scrollPosition}px)`;
+        });
+        
+        // Обработчик колеса мыши для горизонтальной прокрутки
+        thumbnailsContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const maxScroll = -(thumbnailsContainer.scrollWidth - thumbnailsContainer.parentElement.offsetWidth);
+            
+            scrollPosition += e.deltaY;
+            scrollPosition = Math.min(0, Math.max(scrollPosition, maxScroll));
+            
+            thumbnailsContainer.style.transform = `translateX(${scrollPosition}px)`;
+        });
+    </script>
+</body>
+</html>
