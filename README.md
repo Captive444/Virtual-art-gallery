@@ -25,7 +25,7 @@ https://captive444.github.io/zal-1/
 Чтобы запустить проект локально, следуйте этим шагам:
 
 1. Клонируйте репозиторий: `git clone https://github.com/your-username/art-gallery.git`
-2. Откройте файл `index.html` в браузере (желательно Fully Kiosk Browser или через локальный сервер на win)
+2. Откройте файл `index.html` в браузере (желательно Fully Kiosk Browser или через локальный сервер)
 
 ## Использование
 
