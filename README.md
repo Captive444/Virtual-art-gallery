@@ -1,4 +1,4 @@
-https://captive444.github.io/zal-1/
+[https://captive444.github.io/zal-1/](https://captive444.github.io/Virtual-art-gallery/)
 
 # Проект: Виртуальная выставка искусств
 
